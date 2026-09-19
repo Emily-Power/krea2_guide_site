@@ -68,7 +68,7 @@ scripts/director-catalog.static.json（手维；catalog 非 combo 字段的来�
 2. `python scripts/combo_prompts.py --gen 3 --check-stale` 查缺漏 → 生成新 json（新增条目标 pending）
 3. 新增条目的 label 主题词若不在 SCENE/BEAT_EXPAND 表内，需先补表（否则场景随机、beat 无锚）——`build_all` 已内置 **gate 门禁**：主题锚六路全空（场景/体位/姿态/衣着/beat/强制/主体覆盖）的条目自动打印 `[gate]` 高危清单，维度向/随机/词预算/连续锁类为设计豁免
 4. `python scripts/regen_combo_unique.py` 出图（结束后**自动跑三项体检**：映射完整性/主题锚覆盖/跨维度矛盾，问题清单打印在输出尾部）
-5. 视觉验收：spawn `vision-reviewer` 抽查新图（体位类、场景锚类必查）；模型不服从的条目走 DIM_FIX 或 seed 扫描（scripts/_headshot_seed_scan.py 可参数化复用）
+5. 视觉验收：用 Read 工具直接读新图抽查（体位类、场景锚类必查）；模型不服从的条目走 DIM_FIX 或 seed 扫描（scripts/_headshot_seed_scan.py 可参数化复用）
 
 **主体覆盖**：默认 LOCK 是 solo 东亚女。男像/双人条目必须在 `CAST_FIX`（主体句/代词/宾语/构图填充主语四字段）登记，并配 DIM_FIX 男装/双人动作——否则男像生成女性、双人缺伴侣（2026-09-10 根治）。
 
@@ -91,7 +91,7 @@ script 加载顺序（有依赖，勿乱序）：
 - 字号/行高/间距/动效一律用 `:root` token：`--fs-*`（meta/xs/sm/base/md/lg/xl/hero）、`--lh-*`（tight/normal/loose）、`--sp-*`（1/2/3/4/6/8/12）、`--dur-*`/`--ease`。**禁止新增裸写 font-size/padding/gap/transition 值**；中文正文 ≥12px，正文行高 1.6。
 - 交互状态必须保留：全局 `:focus-visible` 焦点环（键盘导航唯一可视指示）、`button:active` 按压反馈、输入框 focus 态、`@media (prefers-reduced-motion: reduce)` 动效降级。
 - 触控目标：桌面可点元素 ≥24px，≤640px 主操作 ≥44px。
-- 回归：改完 UI 跑 `node scripts/_ui_capture.mjs`（Edge headless + CDP，8766 端口），视觉验收 spawn `vision-reviewer`（model:"sonnet"）。catalog 校验 `python scripts/build_director_catalog.py --check`。
+- 回归：改完 UI 跑 `node scripts/_ui_capture.mjs`（Edge headless + CDP，8766 端口），视觉验收用 Read 工具直接读截图（不 spawn 视觉子代理）。catalog 校验 `python scripts/build_director_catalog.py --check`。
 
 ## 图片资源
 
