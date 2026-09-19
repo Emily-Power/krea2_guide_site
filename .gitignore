@@ -1,0 +1,18 @@
+# 机器/工具噪声
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.log
+
+# 示例图/组合缩略图：原始资源不入库，由拉取者自行生成或替换
+# 映射见 assets/combo-gallery-data.js（自动生成）
+assets/images/
+
+# UI/UX 重构基线截图与回归记录（不入库）
+docs/_ui-baseline/

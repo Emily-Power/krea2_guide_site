@@ -1,0 +1,126 @@
+{
+  "857": {
+    "class_type": "ResolutionSelector",
+    "inputs": {
+      "aspect_ratio": "9:16 (Portrait Widescreen)",
+      "megapixels": 2,
+      "multiple": 32
+    }
+  },
+  "757": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "755": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_bf16.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "761": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "moody\\Moody-Krea-Mix-premium_00002__clean_convrot_int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "627": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "A candid shot, 非常写实的照片，业余拍摄，一位19岁中国年轻可爱CUTE美女，精致妆容，漂亮的五官：皮肤白皙细腻，乳房丰满，巨乳下垂，四肢纤细，腰肢纤细，黑色齐肩头发自然披散、厚重齐刘海，圆润脸庞搭配大眼睛。\n\n \n\n 裸露香肩, 纤细腰肢, \n\n\n黑色杏眼含情脉脉，可爱纯欲气质，胸部丰满，四肢纤瘦，仰面躺在铺满玫瑰花瓣的浴缸中，双手轻轻搭在浴缸边缘，水面刚好到胸口，花瓣漂浮在水面上，遮住关键部位，头微微后仰，嘴唇微张，表情放松而享受。浴室中烛光闪烁，蒸汽升腾，背景是豪华浴室的大理石墙面与水晶吊灯，画面奢华而浪漫，浅景深，细腻皮肤纹理，35mm镜头，f/2.0，1/250s快门速度。",
+      "clip": [
+        "755",
+        0
+      ]
+    }
+  },
+  "763": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "627",
+        0
+      ]
+    }
+  },
+  "851": {
+    "class_type": "SeedNode",
+    "inputs": {
+      "seed": 1937
+    }
+  },
+  "599": {
+    "class_type": "KSamplerAdvanced",
+    "inputs": {
+      "model": [
+        "761",
+        0
+      ],
+      "add_noise": "enable",
+      "noise_seed": [
+        "851",
+        0
+      ],
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "beta",
+      "positive": [
+        "627",
+        0
+      ],
+      "negative": [
+        "763",
+        0
+      ],
+      "latent_image": [
+        "698",
+        0
+      ],
+      "start_at_step": 0,
+      "end_at_step": 8,
+      "return_with_leftover_noise": "enable"
+    }
+  },
+  "829": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "599",
+        0
+      ],
+      "vae": [
+        "757",
+        0
+      ]
+    }
+  },
+  "732": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "829",
+        0
+      ],
+      "filename_prefix": "image/%date:yyyy-MM-dd%/Krea2-%date:hhmmss%"
+    }
+  },
+  "698": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": [
+        "857",
+        0
+      ],
+      "height": [
+        "857",
+        1
+      ],
+      "batch_size": 1
+    }
+  }
+}

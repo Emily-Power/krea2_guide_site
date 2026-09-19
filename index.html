@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skill 教学站 · figure · youth · erotic</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/director.css" />
+</head>
+<body>
+  <div class="sidebar-backdrop" id="backdrop"></div>
+  <div class="mobile-bar">
+    <strong>Skill 教学站</strong>
+    <button type="button" id="menuBtn">目录</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>文生图 Skill 速览</h1>
+        <p>三 Skill · 导演台 · 图文菜单</p>
+      </div>
+            <nav>
+        <div class="nav-group">
+          <h2>总览</h2>
+          <a href="#intro" data-nav="page">首页</a>
+          <a href="#director" data-nav="page">🎬 导演台</a>
+          <a href="#rules" data-nav="page">写法规则</a>
+          <a href="#compare" data-nav="page">对比</a>
+          <a href="#router" data-nav="page">路由</a>
+          <a href="#shared" data-nav="page">共同机制</a>
+        </div>
+        <div class="nav-group">
+          <h2>三大 Skill</h2>
+          <a class="sfw-link" href="#skill-figure" data-nav="skill" data-skill="figure">📷 Figure SFW</a>
+          <a class="youth-link" href="#skill-youth" data-nav="skill" data-skill="youth">✨ Youth 纯欲</a>
+          <a class="nsfw-link" href="#skill-erotic" data-nav="skill" data-skill="erotic">🔥 Erotic NSFW</a>
+        </div>
+        <div class="nav-group">
+          <h2>组合实例</h2>
+          <a href="#combo-gallery" data-nav="page">🖼 全量组合图库</a>
+        </div>
+        <div class="nav-group">
+          <h2>更多</h2>
+          <a href="#output" data-nav="page">输出形态</a>
+          <a href="#phrases" data-nav="page">说法模板</a>
+          <a href="#faq" data-nav="page">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <!-- INTRO -->
+      <header class="hero" id="intro">
+        <div class="hero-visual">
+          <img src="assets/images/hero-banner.jpg" alt="" width="1200" height="400" />
+        </div>
+        <div class="hero-body">
+          <h1>三个 Skill，一张图先选对路</h1>
+          <p class="sub">figure = SFW 摄影 · youth = 纯欲暗示 · erotic = 大胆 NSFW。用<strong>导演台</strong>切换三模式、搜组合包、点选细节、复制四段英文；复杂精修丢回对话 skill。</p>
+          <p class="sub" style="margin-top:-0.4rem"><a href="#director">→ 打开导演台</a> · <a href="#rules">写法规则</a></p>
+          <div class="pills">
+            <span class="pill pill-sfw">SFW 完整着装</span>
+            <span class="pill pill-youth">纯欲暗示</span>
+            <span class="pill pill-nsfw">NSFW 默认大胆</span>
+            <span class="pill">默认东亚</span>
+            <span class="pill">Krea 2 · 六/七层</span>
+            <span class="pill">18+</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- DIRECTOR -->
+      <section id="director">
+        <div class="director mode-sfw" id="directorRoot">
+          <div class="director-top">
+            <div>
+              <h2>导演台 · 表单拼装</h2>
+              <p class="sub">先搜组合包 → 再<strong>多选叠层</strong>点细节（衣着/发/姿/光等可 L2+L3+L4 同维叠加，标「多选叠层」）→ 右侧预览复制。主体人种/年龄等为单选。</p>
+            </div>
+            <div class="director-top-right">
+              <div class="skill-switch" role="group" aria-label="选择 Skill">
+                <button type="button" data-mode="figure" class="active-sfw">📷 Figure</button>
+                <button type="button" data-mode="youth">✨ Youth</button>
+                <button type="button" data-mode="erotic">🔥 Erotic</button>
+              </div>
+              <span id="dirToast" role="status" aria-live="polite"> </span>
+            </div>
+          </div>
+
+          <p class="mode-tip" id="modeTip">SFW · 姿态优先 · Main 100–180 · 全文 200–380 词 · 禁默认私房</p>
+
+          <div class="how-steps" aria-label="用法">
+            <div class="how-step"><b>0. 一键预设</b>点上方预设卡片，立刻套完整参数</div>
+            <div class="how-step"><b>1. 组合包 / 点菜</b>搜组合包；<b>纵向叠层</b>=造型+刘海+发态（同层互斥）· <b>横向多选</b>=道具多件</div>
+            <div class="how-step"><b>2. 软推荐</b>点到半身裙/西装/白T/窗光等时出现「常见搭配」主推+备选 · 可应用也可忽略</div>
+            <div class="how-step"><b>3. 复制</b>右侧预览 · 复杂精修回对话 skill（推荐=先验≠唯一答案；用户选择优先）</div>
+          </div>
+
+          <div class="rec-panel" id="recPanel" hidden>
+            <div class="rec-panel-head">
+              <strong>💡 软推荐搭配</strong>
+              <span class="rec-panel-sub" id="recSource">常见穿搭/摄影习惯 · 非强制</span>
+            </div>
+            <div class="rec-panel-title" id="recTitle">—</div>
+            <div class="rec-panel-actions">
+              <button type="button" class="primary" id="btnRecApply">应用此搭配</button>
+              <button type="button" id="btnRecAlt" hidden>换一版备选</button>
+              <button type="button" id="btnRecDismiss">不用</button>
+            </div>
+            <div class="rec-alts" id="recAlts"></div>
+          </div>
+
+          <div class="shot-strip-wrap">
+            <div class="shot-strip-head">
+              <strong>🎞 分镜（形态 E）</strong>
+              <div class="shot-strip-actions">
+                <button type="button" id="btnAddShot">+ 空 Shot</button>
+                <button type="button" id="btnDupShot">复制当前</button>
+                <button type="button" class="primary" id="btnVaryShots">一键 4 镜</button>
+                <button type="button" id="btnDirCopySeries">复制全部分镜</button>
+              </div>
+            </div>
+            <div class="shot-strip" id="shotStrip"></div>
+          </div>
+
+          <div class="recipe-bar">
+            <input type="text" id="recipeName" placeholder="配方名称…" />
+            <button type="button" class="primary" id="btnSaveRecipe">保存配方</button>
+            <span class="sep"></span>
+            <select id="recipeSelect" aria-label="已存配方"></select>
+            <button type="button" id="btnLoadRecipe">加载</button>
+            <button type="button" id="btnDelRecipe">删除</button>
+            <span class="sep"></span>
+            <button type="button" id="btnExportRecipe">导出</button>
+            <button type="button" id="btnImportRecipe">导入</button>
+            <input type="file" id="recipeFile" accept="application/json,.json" hidden />
+          </div>
+
+          <div class="director-body">
+            <div class="director-form-col">
+              <div id="presetBar" class="preset-bar" aria-label="一键预设"></div>
+
+              <p class="section-label">命名组合包</p>
+              <div id="comboPicker"></div>
+
+              <p class="section-label">细节参数</p>
+              <div id="fieldGroups"></div>
+
+              <div class="extra-block">
+                <label for="dirExtra">附加约束（写入 Main）</label>
+                <textarea id="dirExtra" rows="3" placeholder="例如：锁黑长直、脚进画、主光打在左脸…"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="primary" id="btnDirRandom">随机当前镜</button>
+                <button type="button" id="btnResetDefaults">恢复默认</button>
+              </div>
+            </div>
+
+            <div class="director-preview-col">
+              <div class="out-head">
+                <strong>实时预览 · 形态 A</strong>
+                <div class="director-actions">
+                  <button type="button" class="primary" id="btnDirCopy">复制英文</button>
+                  <button type="button" id="btnDirCopyCmd">复制 /skill 命令</button>
+                </div>
+              </div>
+              <pre id="dirPreview"></pre>
+              <p class="dir-wordcount" id="dirWordCount">约 — 英文词</p>
+              <p class="dir-hint">拼装结果供教学与快速粘贴；对话里 skill 会再按六层/七层与篇幅目标润色。</p>
+              <div class="director-side">
+                <h3>中文导播单</h3>
+                <div class="zh-box" id="dirZh"></div>
+                <div class="chip-row" id="dirChips"></div>
+                <h3>分镜索引</h3>
+                <div class="series-list" id="dirSeries"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RULES -->
+      <section id="rules">
+        <h2>写法规则（新对话可直接执行）</h2>
+        <p class="lead">Skill 只下可执行指令：结构 · 篇幅 · 压缩序 · 分模型。不讲历史纠错话术。</p>
+        <div class="grid-3">
+          <article class="card sfw">
+            <div class="card-body">
+              <h3><span class="pill pill-sfw">Figure</span> 六层</h3>
+              <p style="font-size:0.88rem;line-height:1.55;color:var(--muted)">镜头 → 动作 → 衣 → 材质 → 光 → 场<br/>
+              Main <strong>100–180</strong> 词 · 全文 <strong>200–380</strong> 词<br/>
+              超约 420 词先压缩；<strong>永不砍动作与主光</strong></p>
+            </div>
+          </article>
+          <article class="card youth">
+            <div class="card-body">
+              <h3><span class="pill pill-youth">Youth</span> 七层</h3>
+              <p style="font-size:0.88rem;line-height:1.55;color:var(--muted)">镜头 → 姿 → <strong>暗示焦点</strong> → 服饰 → 材质 → 光 → 场<br/>
+              Main <strong>100–180</strong> 词 · 全文 <strong>200–380</strong> 词<br/>
+              逾约 420 词先压缩；<strong>禁止砍暗示焦点与主光</strong></p>
+            </div>
+          </article>
+          <article class="card nsfw">
+            <div class="card-body">
+              <h3><span class="pill pill-nsfw">Erotic</span> 七层</h3>
+              <p style="font-size:0.88rem;line-height:1.55;color:var(--muted)">镜头 → 姿 → <strong>连接/暴露</strong> → 手服 → 材质 → 光 → 场<br/>
+              Main <strong>100–180</strong> 词 · 全文 <strong>200–400</strong> 词<br/>
+              逾约 440 词先压缩，先砍 L7 场；<strong>永不砍连接与主光</strong></p>
+            </div>
+          </article>
+        </div>
+        <div class="defaults" style="margin-top:0.8rem">
+          <div class="def"><span class="k">默认模型</span><span class="v">Krea 2 + 完整句</span></div>
+          <div class="def"><span class="k">加载 TE</span><span class="v">CLIPLoader type=krea2</span></div>
+          <div class="def"><span class="k">Seedream</span><span class="v">同结构更精炼 · 鼓励 B</span></div>
+          <div class="def"><span class="k">缺信息</span><span class="v">补层一句 · 不灌水</span></div>
+          <div class="def"><span class="k">句式</span><span class="v">自然语言 · 少标签墙</span></div>
+          <div class="def"><span class="k">人种</span><span class="v">未指定 → East Asian</span></div>
+        </div>
+      </section>
+
+      <!-- COMPARE -->
+      <section id="compare">
+        <h2>一眼对比</h2>
+        <p class="lead">绿=摄影 SFW · 金=纯欲暗示 · 粉=露骨 NSFW。默认人种都是东亚成年。</p>
+
+        <div class="viz" aria-label="对比图">
+          <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a3d2e"/><stop offset="100%" stop-color="#15202b"/></linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3d1a2a"/><stop offset="100%" stop-color="#1a1520"/></linearGradient>
+            </defs>
+            <rect x="20" y="20" width="350" height="240" rx="18" fill="url(#g1)" stroke="#3dd68c" stroke-width="2"/>
+            <rect x="430" y="20" width="350" height="240" rx="18" fill="url(#g2)" stroke="#ff7a9a" stroke-width="2"/>
+            <text x="195" y="58" text-anchor="middle" fill="#3dd68c" font-size="18" font-weight="700" font-family="Segoe UI,sans-serif">figure-photo</text>
+            <text x="605" y="58" text-anchor="middle" fill="#ff7a9a" font-size="18" font-weight="700" font-family="Segoe UI,sans-serif">erotic-prompt</text>
+            <!-- icons -->
+            <circle cx="195" cy="110" r="28" fill="rgba(61,214,140,0.2)" stroke="#3dd68c"/>
+            <path d="M180 115 h30 M195 100 v30" stroke="#3dd68c" stroke-width="3" fill="none"/>
+            <rect x="183" y="98" width="24" height="18" rx="3" fill="none" stroke="#3dd68c" stroke-width="2"/>
+            <circle cx="605" cy="110" r="28" fill="rgba(255,122,154,0.2)" stroke="#ff7a9a"/>
+            <path d="M590 115 Q605 95 620 115" stroke="#ff7a9a" stroke-width="2.5" fill="none"/>
+            <circle cx="605" cy="120" r="4" fill="#ff7a9a"/>
+            <text x="195" y="168" text-anchor="middle" fill="#c8e6d4" font-size="13" font-family="Segoe UI,sans-serif">街拍 · 旅拍 · 证件 · 运动</text>
+            <text x="195" y="190" text-anchor="middle" fill="#c8e6d4" font-size="13" font-family="Segoe UI,sans-serif">日韩中写真 · 居家柔美*</text>
+            <text x="195" y="220" text-anchor="middle" fill="#8fbc9f" font-size="12" font-family="Segoe UI,sans-serif">姿态优先 · 禁默认私房</text>
+            <text x="195" y="240" text-anchor="middle" fill="#8fbc9f" font-size="12" font-family="Segoe UI,sans-serif">完整着装默认</text>
+            <text x="605" y="168" text-anchor="middle" fill="#f0c8d4" font-size="13" font-family="Segoe UI,sans-serif">自展 · 插入 · 幻想</text>
+            <text x="605" y="190" text-anchor="middle" fill="#f0c8d4" font-size="13" font-family="Segoe UI,sans-serif">酒店 · 连接点 · 组合包</text>
+            <text x="605" y="220" text-anchor="middle" fill="#c98fa0" font-size="12" font-family="Segoe UI,sans-serif">连接优先 · 默认大胆</text>
+            <text x="605" y="240" text-anchor="middle" fill="#c98fa0" font-size="12" font-family="Segoe UI,sans-serif">E1半褪/E2内衣默认</text>
+            <path d="M380 140 L420 140" stroke="#6ea8ff" stroke-width="2" stroke-dasharray="4 4"/>
+            <polygon points="418,135 430,140 418,145" fill="#6ea8ff"/>
+          </svg>
+          <div class="viz-cap">* 居家柔美须点名，且仍 SFW</div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card sfw">
+            <div class="card-media"><img src="assets/images/street-ootd.jpg" alt="街拍" /></div>
+            <div class="card-body">
+              <h3><span class="pill pill-sfw">SFW</span> figure-photo</h3>
+              <p><code>/figure-photo-prompt</code></p>
+              <p class="card-note">街拍旅拍证件运动 · 姿态优先 · 禁默认私房</p>
+            </div>
+          </article>
+          <article class="card youth">
+            <div class="card-media"><img src="assets/images/ys-window-lace.jpg" alt="窗边纯欲" /></div>
+            <div class="card-body">
+              <h3><span class="pill pill-youth">纯欲</span> youth-seduction</h3>
+              <p><code>/youth-seduction-prompt</code></p>
+              <p class="card-note">独处暗示 · 窗边蕾丝 · 被观看感 · 禁止露骨</p>
+            </div>
+          </article>
+          <article class="card nsfw">
+            <div class="card-media"><img src="assets/images/nsfw-robe-hotel.jpg" alt="酒店氛围" /></div>
+            <div class="card-body">
+              <h3><span class="pill pill-nsfw">NSFW</span> erotic-prompt</h3>
+              <p><code>/erotic-prompt</code></p>
+              <p class="card-note">大胆自展 · 连接点 · 插入点名</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ROUTER -->
+      <section id="router">
+        <h2>该用哪个？</h2>
+        <p class="lead">点意图，看路由结果。</p>
+
+        <div class="viz">
+          <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="280" y="20" width="160" height="44" rx="12" fill="#222a38" stroke="#6ea8ff"/>
+            <text x="360" y="48" text-anchor="middle" fill="#eef2fa" font-size="14" font-family="Segoe UI,sans-serif">你的意图</text>
+            <path d="M360 64 L360 90" stroke="#6ea8ff" stroke-width="2"/>
+            <path d="M200 90 L520 90" stroke="#6ea8ff" stroke-width="2"/>
+            <path d="M200 90 L200 110" stroke="#3dd68c" stroke-width="2"/>
+            <path d="M360 90 L360 110" stroke="#ffc857" stroke-width="2"/>
+            <path d="M520 90 L520 110" stroke="#ff7a9a" stroke-width="2"/>
+            <rect x="110" y="110" width="180" height="70" rx="12" fill="rgba(61,214,140,0.12)" stroke="#3dd68c"/>
+            <text x="200" y="140" text-anchor="middle" fill="#3dd68c" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">figure</text>
+            <text x="200" y="160" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">街拍旅拍证件居家柔美</text>
+            <rect x="270" y="110" width="180" height="70" rx="12" fill="rgba(255,200,87,0.1)" stroke="#ffc857"/>
+            <text x="360" y="140" text-anchor="middle" fill="#ffc857" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">youth-seduction</text>
+            <text x="360" y="160" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">纯欲暗示不露骨</text>
+            <rect x="430" y="110" width="180" height="70" rx="12" fill="rgba(255,122,154,0.12)" stroke="#ff7a9a"/>
+            <text x="520" y="140" text-anchor="middle" fill="#ff7a9a" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">erotic</text>
+            <text x="520" y="160" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">露骨大胆插入最色</text>
+          </svg>
+        </div>
+
+        <div class="router">
+          <div class="router-options">
+            <button type="button" data-route="to-sfw" data-title="→ figure-photo-prompt"
+              data-detail="街拍 / 旅拍 / 证件 / 运动 / 日韩写真 / 居家柔美（不露点）">街拍、证件、瑜伽、日系窗光、居家柔美</button>
+            <button type="button" data-route="to-other" data-title="→ youth-seduction"
+              data-detail="纯欲暗示、独处暧昧，不写露骨。">纯欲暗示、暧昧但不露骨</button>
+            <button type="button" data-route="to-nsfw" data-title="→ erotic-prompt"
+              data-detail="默认大胆 + 自展；点名才插入/全裸。">露骨、酒店大胆、最色、插入</button>
+          </div>
+          <div id="routerResult" class="router-result"></div>
+        </div>
+      </section>
+
+      <!-- SHARED -->
+      <section id="shared">
+        <h2>共同内部机制</h2>
+        <p class="lead">安全选题出片 → 正文五标准 → 六/七层铁律 → 交付。组合包只是选题，不是全文。</p>
+
+        <div class="viz">
+          <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="28" fill="#9aa6bc" font-size="12" font-family="Segoe UI,sans-serif">由外到内（越内越决定出图）</text>
+            <rect x="40" y="45" width="640" height="30" rx="8" fill="#ff7a9a" opacity="0.85"/>
+            <text x="360" y="65" text-anchor="middle" fill="#1a0a10" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">1 安全 · 18+ · 人种默认东亚</text>
+            <rect x="60" y="80" width="600" height="30" rx="8" fill="#ffc857" opacity="0.9"/>
+            <text x="360" y="100" text-anchor="middle" fill="#1a1408" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">2 选题 · 大区 / 组合包 / 分支</text>
+            <rect x="80" y="115" width="560" height="30" rx="8" fill="#6ea8ff" opacity="0.9"/>
+            <text x="360" y="135" text-anchor="middle" fill="#0a1220" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">3 出片 · 妆发 / 修型 / 分镜 / 锁脸</text>
+            <rect x="100" y="150" width="520" height="30" rx="8" fill="#3dd68c" opacity="0.9"/>
+            <text x="360" y="170" text-anchor="middle" fill="#0a1a10" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">4 正文 · 五标准 + 六层/七层 + 篇幅目标</text>
+            <rect x="120" y="185" width="480" height="30" rx="8" fill="#b794f6" opacity="0.9"/>
+            <text x="360" y="205" text-anchor="middle" fill="#120a20" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">5 铁律 · 单帧 / 防崩 / 压缩序</text>
+            <rect x="140" y="220" width="440" height="30" rx="8" fill="#63b3ed" opacity="0.9"/>
+            <text x="360" y="240" text-anchor="middle" fill="#0a1520" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">6 交付 · 形态 A–E · 自检</text>
+          </svg>
+          <div class="viz-cap">第 4 层：figure 六层 / erotic 七层（连接优先）· 完整句 · 目标词数</div>
+        </div>
+
+        <h3>四段输出（形态 A）</h3>
+        <div class="viz">
+          <svg viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="20" width="160" height="110" rx="12" fill="#1a2435" stroke="#6ea8ff"/>
+            <text x="90" y="55" text-anchor="middle" fill="#6ea8ff" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">① This is a</text>
+            <text x="90" y="80" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">镜头+风格</text>
+            <text x="90" y="100" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">定格瞬间</text>
+            <rect x="190" y="20" width="160" height="110" rx="12" fill="#1a2435" stroke="#3dd68c"/>
+            <text x="270" y="55" text-anchor="middle" fill="#3dd68c" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">② Main</text>
+            <text x="270" y="80" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">身份+东亚</text>
+            <text x="270" y="100" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">姿/连接+服</text>
+            <rect x="370" y="20" width="160" height="110" rx="12" fill="#1a2435" stroke="#ffc857"/>
+            <text x="450" y="55" text-anchor="middle" fill="#ffc857" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">③ Env</text>
+            <text x="450" y="80" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">2～4 锚点</text>
+            <text x="450" y="100" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">主光源</text>
+            <rect x="550" y="20" width="160" height="110" rx="12" fill="#1a2435" stroke="#ff7a9a"/>
+            <text x="630" y="55" text-anchor="middle" fill="#ff7a9a" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">④ Comp</text>
+            <text x="630" y="80" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">构图中心</text>
+            <text x="630" y="100" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">光色氛围</text>
+          </svg>
+        </div>
+
+        <div class="grid-3">
+          <div class="def"><span class="k">figure 核心</span><span class="v">姿态 / 重心优先</span></div>
+          <div class="def"><span class="k">youth 核心</span><span class="v">姿态 + 暗示焦点</span></div>
+          <div class="def"><span class="k">erotic 核心</span><span class="v">性连接点优先</span></div>
+        </div>
+        <div class="defaults" style="margin-top:0.6rem">
+          <div class="def"><span class="k">共同铁律</span><span class="v">单帧 · 完整句 · 不灌水 · 默认东亚 18+</span></div>
+        </div>
+        <div class="callout info" style="margin-top:0.8rem">
+          <strong>Krea 2：</strong>Comfy 用 CLIPLoader <code>type=krea2</code> + <code>qwen3vl_4b_*</code>，写完整句分层。<strong>Seedream：</strong>同结构更精炼，鼓励附形态 B（约 30–100 词）。
+        </div>
+      </section>
+
+            <!-- SKILL SHELLS: tab 切换，勿再竖向平铺子导航 -->
+
+      <section id="skill-figure" class="skill-shell skill-shell-sfw" data-skill-shell="figure">
+        <div class="skill-shell-head">
+          <h2>Figure · SFW <span class="pill pill-sfw">摄影</span></h2>
+          <div class="skill-tabs" role="tablist" aria-label="figure 栏目">
+          <button type="button" class="skill-tab active" data-skill-tab="figure">默认与用法</button>
+          <button type="button" class="skill-tab" data-skill-tab="figure-menu">菜单全图</button>
+          <button type="button" class="skill-tab" data-skill-tab="figure-gallery">示例图</button>
+          <button type="button" class="skill-tab" data-skill-tab="figure-order">下单口令</button>
+          <button type="button" class="skill-tab" data-skill-tab="figure-flow">工作流</button>
+          <button type="button" class="skill-tab" data-skill-tab="figure-arch">架构</button>
+          </div>
+        </div>
+        <div class="skill-panel active" data-skill-panel="figure" id="figure">
+<p class="lead">人体摄影 ≠ 私房。未点名绝不默认卧室。</p>
+
+        <div class="gallery-3">
+          <figure class="figure">
+            <img src="assets/images/street-ootd.jpg" alt="街拍" loading="lazy" />
+            <figcaption><strong>默认倾向</strong> 街拍完整着装</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/beauty-glass.jpg" alt="水光" loading="lazy" />
+            <figcaption><strong>韩水光</strong> 棚拍半身</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/yoga-sport.jpg" alt="运动" loading="lazy" />
+            <figcaption><strong>运动</strong> 功能姿态</figcaption>
+          </figure>
+        </div>
+
+        <h3>未指定时的默认</h3>
+        <div class="defaults">
+          <div class="def"><span class="k">人种</span><span class="v">East Asian</span></div>
+          <div class="def"><span class="k">年龄</span><span class="v">early 20s+</span></div>
+          <div class="def"><span class="k">着装</span><span class="v">完整 OOTD</span></div>
+          <div class="def"><span class="k">题材</span><span class="v">街拍/时尚/职业</span></div>
+          <div class="def"><span class="k">私房</span><span class="v">须点名</span></div>
+          <div class="def"><span class="k">输出</span><span class="v">四段英文+释义</span></div>
+          <div class="def"><span class="k">篇幅</span><span class="v">Main 100–180 · 全文 200–380 词</span></div>
+          <div class="def"><span class="k">模型</span><span class="v">Krea 六层 / Seedream 精炼</span></div>
+        </div>
+
+        <figure class="figure">
+          <img src="assets/images/home-soft.jpg" alt="居家柔美" loading="lazy" />
+          <figcaption><strong>点名「居家柔美/私房」才进 I 区</strong> — 默认 L0 完整家居，仍 SFW。露骨 → erotic。</figcaption>
+        </figure>
+
+        <h3>九大区（点菜）</h3>
+        <div class="zones">
+          <div class="zone"><span class="badge">A</span><div><div class="name">商业时尚</div><div class="desc">杂志 lookbook 美妆</div></div></div>
+          <div class="zone"><span class="badge">B</span><div><div class="name">纪实环境</div><div class="desc">街拍 地铁 雨夜</div></div></div>
+          <div class="zone"><span class="badge">C</span><div><div class="name">运动体能</div><div class="desc">跑 攀 瑜伽</div></div></div>
+          <div class="zone"><span class="badge">D</span><div><div class="name">表演身体</div><div class="desc">芭蕾 街舞 舞台</div></div></div>
+          <div class="zone"><span class="badge">E</span><div><div class="name">职业身份</div><div class="desc">医护 实验 厨师</div></div></div>
+          <div class="zone"><span class="badge">F</span><div><div class="name">艺术观念</div><div class="desc">黑白 剪影</div></div></div>
+          <div class="zone"><span class="badge">G</span><div><div class="name">生活关系</div><div class="desc">旅拍 情侣 咖啡</div></div></div>
+          <div class="zone"><span class="badge">H</span><div><div class="name">特殊媒介</div><div class="desc">水下 航拍</div></div></div>
+          <div class="zone dim"><span class="badge">I</span><div><div class="name">私房室内</div><div class="desc">仅点名 · 仍 SFW</div></div></div>
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="figure-menu" id="figure-menu">
+<p class="lead">架构：<strong>公共 L1–L4 + 专属大区</strong>。组合包约 <strong>330+</strong>；维度 static 由 gen_dimension_static 生成。导演台切 <strong>Figure</strong>。</p>
+
+        <div class="menu-map">
+          <div class="menu-col menu-col-sfw">
+            <h3>大区 · 姿 · 服 · 道具</h3>
+            <ul>
+              <li><strong>大区 A–I</strong> 商业时尚 · 纪实街拍★ · 运动 · 表演 · 职业 · 艺术 · 生活 · 特殊媒介 · 私房（点名）</li>
+              <li><strong>姿势</strong> 中步行走 · S 线 · 气场正站 · 靠墙 · 过肩回眸 · 插袋 · 坐姿系列…</li>
+              <li><strong>服饰</strong> 风衣 OOTD · 西装 · 丹宁 · 运动套 · 针织 · 礼服…（默认完整着装）</li>
+              <li><strong>道具手</strong> 无 / 奶茶 · 包带 · 手机 · 相机 · 哑铃…</li>
+            </ul>
+          </div>
+          <div class="menu-col menu-col-sfw">
+            <h3>场 · 光 · 镜头</h3>
+            <ul>
+              <li><strong>场景</strong> 人行道 · 地铁 · 雨夜斑马 · 咖啡 · 棚白 · 地标 · 健身房 · 舞台…</li>
+              <li><strong>布光</strong> 开敞阴影 · 窗 45° · 硬商业光 · 霓虹混 · 蚌式美妆 · 金辉风景…</li>
+              <li><strong>镜头画幅</strong> 全身 3:4 · 中景 · 半身 · 头肩 · 低机位 · 俯拍软…</li>
+            </ul>
+          </div>
+          <div class="menu-col menu-col-sfw">
+            <h3>妆 · 表情 · 调色</h3>
+            <ul>
+              <li><strong>妆发</strong> 通勤淡妆 · 韩水光 · 清冷 · 运动素颜感 · 晚宴…</li>
+              <li><strong>表情</strong> 浅笑 · 冷感 · 看远 · 对镜头 · 专注工作…</li>
+              <li><strong>调色</strong> 无/胶片 · 冷街 · 暖金 · 低饱和盐系 · 高键棚…</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>组合包大类（SKILL 同步 · 节选）</h3>
+        <div class="zones">
+          <div class="zone sfw-z"><span class="badge">A–I</span><div><div class="name">九大区常青</div><div class="desc">时尚/街拍/运动/职业…</div></div></div>
+          <div class="zone sfw-z"><span class="badge">网</span><div><div class="name">全网补强</div><div class="desc">婚礼 · 演唱会 · 走秀…</div></div></div>
+          <div class="zone sfw-z"><span class="badge">亚</span><div><div class="name">亚洲女 / 东亚写真</div><div class="desc">日韩中壳 · 盐糖 · 旅拍</div></div></div>
+          <div class="zone sfw-z"><span class="badge">街</span><div><div class="name">街拍自拍生活</div><div class="desc">OOTD · 地铁 · 私房软 SFW</div></div></div>
+          <div class="zone sfw-z"><span class="badge">轴</span><div><div class="name">六轴/九轴深库</div><div class="desc">发妆衣场光姿细项</div></div></div>
+          <div class="zone sfw-z"><span class="badge">CV</span><div><div class="name">Civitai 生态</div><div class="desc">combo-cv-* 词预算</div></div></div>
+        </div>
+        <p class="lead" style="margin-top:0.8rem">完整点选请上 <a href="#director">导演台 → Figure</a>：搜组合包 + 展开细节分组。</p>
+        </div>
+        <div class="skill-panel" data-skill-panel="figure-gallery" id="figure-gallery">
+
+            <div class="combo-gallery-embed" data-combo-gallery="figure">
+              <p class="lead">以下为该 Skill <strong>全部命名组合包</strong>实例图（组图映射 + 可搜可筛）。点卡片可复制组合包 ID。</p>
+              <div class="cg-toolbar">
+                <input type="search" class="cg-search" placeholder="搜索组合包 ID / 名称 / 分组…" />
+                <select class="cg-group"><option value="all">全部分组</option></select>
+                <span class="cg-count"></span>
+              </div>
+              <div class="cg-grid"></div>
+            </div>
+            <details class="more" style="margin-top:1rem">
+              <summary>展开：精选大图（封面向）</summary>
+              <div class="inner">
+<p class="lead">记忆「摄影档」题材。正式正文请导演台或 <code>/figure-photo-prompt</code>。</p>
+        <div class="gallery-3">
+          <figure class="figure"><img src="assets/images/fg-street-midstride.jpg" alt="街拍中步" loading="lazy" /><figcaption>街拍中步 OOTD</figcaption></figure>
+          <figure class="figure"><img src="assets/images/fg-metro-commute.jpg" alt="地铁通勤" loading="lazy" /><figcaption>地铁通勤</figcaption></figure>
+          <figure class="figure"><img src="assets/images/fg-editorial.jpg" alt="时尚编辑" loading="lazy" /><figcaption>时尚 S 线编辑</figcaption></figure>
+          <figure class="figure"><img src="assets/images/fg-yoga.jpg" alt="瑜伽" loading="lazy" /><figcaption>瑜伽运动体态</figcaption></figure>
+          <figure class="figure"><img src="assets/images/fg-travel.jpg" alt="旅拍" loading="lazy" /><figcaption>旅拍地标比例</figcaption></figure>
+          <figure class="figure"><img src="assets/images/fg-beauty.jpg" alt="美妆" loading="lazy" /><figcaption>韩系水光半身</figcaption></figure>
+        </div>
+              </div>
+            </details>
+
+        </div>
+        <div class="skill-panel" data-skill-panel="figure-order" id="figure-order">
+<div class="example">
+          <div class="example-head"><span>满血模板</span><button type="button" class="copy-btn">复制</button></div>
+          <pre>/figure-photo-prompt Krea2
+大区：B 纪实街拍
+姿：中步行走，重心后脚，前膝软
+衣：风衣+牛仔裤完整 OOTD，脚进画
+场：城市人行道 2–4 锚，非卧室
+光：开敞阴影或窗侧自然光
+妆：通勤淡妆 · 浅笑看远
+画幅：竖幅全身 3:4
+禁止：默认私房、半褪、露骨、幼态</pre>
+        </div>
+        <div class="grid-2" style="margin-top:0.8rem">
+          <div class="def"><span class="k">懒口令（弱）</span><span class="v">「来张美女写真」→ 易空</span></div>
+          <div class="def"><span class="k">满血口令（强）</span><span class="v">大区+姿+衣+场+光</span></div>
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="figure-flow" id="figure-flow">
+<div class="steps">
+          <div class="step sfw"><div class="n">1</div><div class="t">安全</div><div class="d">SFW 成人 东亚</div></div>
+          <div class="step sfw"><div class="n">2</div><div class="t">形态</div><div class="d">A 默认</div></div>
+          <div class="step sfw"><div class="n">3</div><div class="t">联网?</div><div class="d">流行才搜</div></div>
+          <div class="step sfw"><div class="n">4</div><div class="t">选题</div><div class="d">区+组合包</div></div>
+          <div class="step sfw"><div class="n">5</div><div class="t">叠卷</div><div class="d">p0-p2 等</div></div>
+          <div class="step sfw"><div class="n">6</div><div class="t">正文</div><div class="d">六层·姿态优先</div></div>
+          <div class="step sfw"><div class="n">7</div><div class="t">自检</div><div class="d">篇幅·多轮</div></div>
+        </div>
+        <div class="viz">
+          <svg viewBox="0 0 700 90" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3dd68c"/></marker>
+            </defs>
+            <rect x="10" y="25" width="80" height="40" rx="10" fill="rgba(61,214,140,0.15)" stroke="#3dd68c"/>
+            <text x="50" y="50" text-anchor="middle" fill="#3dd68c" font-size="12" font-family="Segoe UI,sans-serif">输入</text>
+            <line x1="90" y1="45" x2="120" y2="45" stroke="#3dd68c" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="120" y="25" width="100" height="40" rx="10" fill="rgba(61,214,140,0.15)" stroke="#3dd68c"/>
+            <text x="170" y="50" text-anchor="middle" fill="#c8e6d4" font-size="12" font-family="Segoe UI,sans-serif">管道 1–7</text>
+            <line x1="220" y1="45" x2="250" y2="45" stroke="#3dd68c" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="250" y="25" width="120" height="40" rx="10" fill="rgba(61,214,140,0.15)" stroke="#3dd68c"/>
+            <text x="310" y="50" text-anchor="middle" fill="#c8e6d4" font-size="12" font-family="Segoe UI,sans-serif">四段英文</text>
+            <line x1="370" y1="45" x2="400" y2="45" stroke="#3dd68c" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="400" y="25" width="100" height="40" rx="10" fill="rgba(61,214,140,0.15)" stroke="#3dd68c"/>
+            <text x="450" y="50" text-anchor="middle" fill="#c8e6d4" font-size="12" font-family="Segoe UI,sans-serif">中文释义</text>
+            <line x1="500" y1="45" x2="530" y2="45" stroke="#3dd68c" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="530" y="25" width="150" height="40" rx="10" fill="rgba(110,168,255,0.15)" stroke="#6ea8ff"/>
+            <text x="605" y="50" text-anchor="middle" fill="#9cc0ff" font-size="12" font-family="Segoe UI,sans-serif">对照→补丁</text>
+          </svg>
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="figure-arch" id="figure-arch">
+<div class="viz">
+          <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+            <rect x="260" y="10" width="200" height="36" rx="10" fill="#222a38" stroke="#6ea8ff"/>
+            <text x="360" y="33" text-anchor="middle" fill="#eef2fa" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">SKILL.md 导演</text>
+            <line x1="360" y1="46" x2="360" y2="70" stroke="#6ea8ff"/>
+            <line x1="80" y1="70" x2="640" y2="70" stroke="#6ea8ff"/>
+            <!-- three columns -->
+            <rect x="30" y="80" width="200" height="120" rx="12" fill="#181e2a" stroke="#3dd68c"/>
+            <text x="130" y="105" text-anchor="middle" fill="#3dd68c" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">正文·六层</text>
+            <text x="130" y="128" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">prose · krea2 分层</text>
+            <text x="130" y="146" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">pose · lighting</text>
+            <text x="130" y="164" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">breadth A–I</text>
+            <rect x="260" y="80" width="200" height="120" rx="12" fill="#181e2a" stroke="#6ea8ff"/>
+            <text x="360" y="105" text-anchor="middle" fill="#6ea8ff" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">亚洲女·东亚</text>
+            <text x="360" y="128" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">p0-p2 出片</text>
+            <text x="360" y="146" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">east-asian 壳</text>
+            <text x="360" y="164" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">web-fill 盐糖</text>
+            <rect x="490" y="80" width="200" height="120" rx="12" fill="#181e2a" stroke="#ffc857"/>
+            <text x="590" y="105" text-anchor="middle" fill="#ffc857" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">平台·Civitai</text>
+            <text x="590" y="128" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">social 街拍自拍</text>
+            <text x="590" y="146" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">style-packs</text>
+            <text x="590" y="164" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">civitai 词预算</text>
+            <line x1="130" y1="70" x2="130" y2="80" stroke="#3dd68c"/>
+            <line x1="360" y1="70" x2="360" y2="80" stroke="#6ea8ff"/>
+            <line x1="590" y1="70" x2="590" y2="80" stroke="#ffc857"/>
+          </svg>
+        </div>
+        </div>
+      </section>
+
+      <section id="skill-youth" class="skill-shell skill-shell-youth" data-skill-shell="youth">
+        <div class="skill-shell-head">
+          <h2>Youth · 纯欲暗示 <span class="pill pill-youth">非露骨</span></h2>
+          <div class="skill-tabs" role="tablist" aria-label="youth 栏目">
+          <button type="button" class="skill-tab active" data-skill-tab="youth">默认与用法</button>
+          <button type="button" class="skill-tab" data-skill-tab="youth-menu">菜单全图</button>
+          <button type="button" class="skill-tab" data-skill-tab="youth-flow">工作流</button>
+          <button type="button" class="skill-tab" data-skill-tab="youth-gallery">示例图</button>
+          <button type="button" class="skill-tab" data-skill-tab="youth-order">下单口令</button>
+          </div>
+        </div>
+        <div class="skill-panel active" data-skill-panel="youth" id="youth">
+<p class="lead">自我诱惑与被观看感。默认东亚 early twenties 独处；色气靠姿态、服饰状态、暗示焦点与光，不写性器/插入。</p>
+
+        <div class="gallery-3">
+          <figure class="figure">
+            <img src="assets/images/ys-window-lace.jpg" alt="窗边蕾丝" loading="lazy" />
+            <figcaption><strong>窗边风险</strong> 日落逆光 · 过肩回眸</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/ys-mirror-shirt.jpg" alt="镜前衬衫" loading="lazy" />
+            <figcaption><strong>镜前自赏</strong> 男友衫 I2</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/ys-softlife.jpg" alt="金辉居家" loading="lazy" />
+            <figcaption><strong>soft life</strong> 金辉慢晨</figcaption>
+          </figure>
+        </div>
+
+        <h3>未指定时的默认</h3>
+        <div class="defaults">
+          <div class="def"><span class="k">人种</span><span class="v">East Asian</span></div>
+          <div class="def"><span class="k">年龄</span><span class="v">early twenties</span></div>
+          <div class="def"><span class="k">尺度</span><span class="v">pure-desire 暗示</span></div>
+          <div class="def"><span class="k">暴露</span><span class="v">I1/I2（I3 须点名）</span></div>
+          <div class="def"><span class="k">人数</span><span class="v">solo 无男体</span></div>
+          <div class="def"><span class="k">场景</span><span class="v">卧室/窗/酒店轮换</span></div>
+          <div class="def"><span class="k">篇幅</span><span class="v">Main 100–180 · 全文 200–380 词</span></div>
+          <div class="def"><span class="k">正文</span><span class="v">七层 · 暗示整句</span></div>
+        </div>
+
+        <div class="callout info" style="margin-top:0.8rem">
+          <strong>和两边的边界：</strong>干净街拍/证件 → figure；露骨插入/最色 → erotic；「有欲望但不想写硬核」→ <strong>本 skill</strong>。
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="youth-menu" id="youth-menu">
+<p class="lead">架构：<strong>公共 L1–L4 + 专属（尺度/I/暗示/壳）</strong>。组合包约 110+。导演台切 <strong>Youth</strong>。</p>
+
+        <div class="menu-map">
+          <div class="menu-col">
+            <h3>尺度 · 行为 · I 级</h3>
+            <ul>
+              <li><strong>尺度</strong> fresh / pure-desire★ / sensual-implied / edge</li>
+              <li><strong>行为</strong> 镜前自赏 · 独处展示 · 浴后 · 窗边风险 · 沙发懒刷…</li>
+              <li><strong>暴露 I0–I3</strong> 完整 → 居家随意★ → 半敞 → 浴巾/内衣（点名）</li>
+            </ul>
+          </div>
+          <div class="menu-col">
+            <h3>姿 · 衣 · 暗示</h3>
+            <ul>
+              <li><strong>姿</strong> 窗倚 · 过肩回眸 · 拉帘 · 镜伸展 · 床沿 · 沙发蜷…</li>
+              <li><strong>衣</strong> 男友衫 · 睡衣 · 蕾丝套 · 浴袍 · 白衬衫…</li>
+              <li><strong>暗示焦点</strong> 锁骨 · 腰腹 · 大腿缘 · 肩带 · 湿发 · 视线</li>
+            </ul>
+          </div>
+          <div class="menu-col">
+            <h3>场 · 光 · 镜头 · 壳</h3>
+            <ul>
+              <li><strong>场</strong> 窗城 · 卧室 · 酒店 · 浴 · 阳台 · 奶油房…</li>
+              <li><strong>光</strong> 纱帘逆光 · 金辉窗 · 钨丝 · 百叶 · 屏光…</li>
+              <li><strong>美学壳</strong> 纯欲 · 白月光 · 禁欲 · coquette · Vanilla · soft life…</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>组合包大类（SKILL 同步）</h3>
+        <div class="zones">
+          <div class="zone youth-z"><span class="badge">常</span><div><div class="name">常青</div><div class="desc">镜前/床/窗/浴巾/沙发…</div></div></div>
+          <div class="zone youth-z"><span class="badge">网</span><div><div class="name">全网热包</div><div class="desc">小红书沙发 · bed selfie · 窗纱…</div></div></div>
+          <div class="zone youth-z"><span class="badge">垂</span><div><div class="name">垂类</div><div class="desc">白月光 · 禁欲 · coquette · Vanilla…</div></div></div>
+          <div class="zone youth-z"><span class="badge">出</span><div><div class="name">出片/HMCP</div><div class="desc">锁脸 · 五维发妆衣道具姿</div></div></div>
+          <div class="zone youth-z"><span class="badge">场</span><div><div class="name">场景包</div><div class="desc">套房三帧 · 居家四帧…</div></div></div>
+          <div class="zone youth-z"><span class="badge">镜</span><div><div class="name">镜头包</div><div class="desc">3:4 封面 · 9:16 · 过肩…</div></div></div>
+        </div>
+        <p class="lead" style="margin-top:0.8rem">完整点选请上 <a href="#director">导演台 → Youth</a>：搜组合包 + 展开细节分组。</p>
+        </div>
+        <div class="skill-panel" data-skill-panel="youth-flow" id="youth-flow">
+<div class="steps">
+          <div class="step youth"><div class="n">1</div><div class="t">安全</div><div class="d">18+ 东亚 暗示</div></div>
+          <div class="step youth"><div class="n">2</div><div class="t">路由</div><div class="d">非 figure/erotic</div></div>
+          <div class="step youth"><div class="n">3</div><div class="t">4 轴</div><div class="d">场·光·姿·I</div></div>
+          <div class="step youth"><div class="n">4</div><div class="t">组合包</div><div class="d">点菜或预设</div></div>
+          <div class="step youth"><div class="n">5</div><div class="t">七层正文</div><div class="d">暗示焦点写死</div></div>
+          <div class="step youth"><div class="n">6</div><div class="t">出图</div><div class="d">Comfy/Krea</div></div>
+          <div class="step youth"><div class="n">7</div><div class="t">形态 C</div><div class="d">对照补丁</div></div>
+        </div>
+        <div class="callout youth">
+          <strong>拉满价值：</strong>不要只说「纯欲」。写清 <code>场 + 光 + 姿 + I级</code>；出图后用「是这样吗」走补丁，而不是无限重随机。
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="youth-gallery" id="youth-gallery">
+
+            <div class="combo-gallery-embed" data-combo-gallery="youth">
+              <p class="lead">以下为该 Skill <strong>全部命名组合包</strong>实例图（组图映射 + 可搜可筛）。点卡片可复制组合包 ID。</p>
+              <div class="cg-toolbar">
+                <input type="search" class="cg-search" placeholder="搜索组合包 ID / 名称 / 分组…" />
+                <select class="cg-group"><option value="all">全部分组</option></select>
+                <span class="cg-count"></span>
+              </div>
+              <div class="cg-grid"></div>
+            </div>
+            <details class="more" style="margin-top:1rem">
+              <summary>展开：精选大图（封面向）</summary>
+              <div class="inner">
+<p class="lead">记忆「心动档」用。正式正文请导演台或 <code>/youth-seduction-prompt</code>。</p>
+        <div class="gallery-3">
+          <figure class="figure"><img src="assets/images/ys-window-lace.jpg" alt="" loading="lazy" /><figcaption>日落蕾丝回眸</figcaption></figure>
+          <figure class="figure"><img src="assets/images/ys-mirror-shirt.jpg" alt="" loading="lazy" /><figcaption>镜前男友衫</figcaption></figure>
+          <figure class="figure"><img src="assets/images/ys-bed-soft.jpg" alt="" loading="lazy" /><figcaption>床沿居家</figcaption></figure>
+          <figure class="figure"><img src="assets/images/ys-sofa-phone.jpg" alt="" loading="lazy" /><figcaption>沙发手机</figcaption></figure>
+          <figure class="figure"><img src="assets/images/ys-wet-hair.jpg" alt="" loading="lazy" /><figcaption>浴后湿发</figcaption></figure>
+          <figure class="figure"><img src="assets/images/ys-softlife.jpg" alt="" loading="lazy" /><figcaption>soft life 金辉</figcaption></figure>
+        </div>
+              </div>
+            </details>
+
+        </div>
+        <div class="skill-panel" data-skill-panel="youth-order" id="youth-order">
+<div class="example">
+          <div class="example-head"><span>满血 4 轴模板</span><button type="button" class="copy-btn">复制</button></div>
+          <pre>/youth-seduction-prompt Krea2
+场：公寓落地窗 + 素白纱帘 + 窗外日落城市
+光：日落强逆光为主，身体在影，发与肩胛暖 rim，脸仅薄补
+姿：¾背身过肩回眸，一手拉帘一手撩长直发
+衣：I3 奶油蕾丝 bra+briefs，遮盖写死
+表情：半眯、少笑、知道被看
+画幅：竖幅全身 2:3
+禁止：高键平光、可爱圆眼、印花帘、露骨</pre>
+        </div>
+        <div class="grid-2" style="margin-top:0.8rem">
+          <div class="def"><span class="k">懒口令（弱）</span><span class="v">「来张纯欲」→ 默认软居家</span></div>
+          <div class="def"><span class="k">满血口令（强）</span><span class="v">场+光+姿+I → 英雄帧</span></div>
+        </div>
+        </div>
+      </section>
+
+      <section id="skill-erotic" class="skill-shell skill-shell-nsfw" data-skill-shell="erotic">
+        <div class="skill-shell-head">
+          <h2>Erotic · NSFW <span class="pill pill-nsfw">18+</span></h2>
+          <div class="skill-tabs" role="tablist" aria-label="erotic 栏目">
+          <button type="button" class="skill-tab active" data-skill-tab="erotic">默认与用法</button>
+          <button type="button" class="skill-tab" data-skill-tab="erotic-menu">菜单全图</button>
+          <button type="button" class="skill-tab" data-skill-tab="erotic-flow">工作流</button>
+          <button type="button" class="skill-tab" data-skill-tab="erotic-scale">尺度图表</button>
+          <button type="button" class="skill-tab" data-skill-tab="nsfw-gallery">示例图</button>
+          <button type="button" class="skill-tab" data-skill-tab="erotic-order">下单口令</button>
+          </div>
+        </div>
+        <div class="skill-panel active" data-skill-panel="erotic" id="erotic">
+<p class="lead">默认大胆，但不自动全裸插入。配图为委婉氛围。</p>
+
+        <div class="gallery-3">
+          <figure class="figure">
+            <img src="assets/images/nsfw-robe-hotel.jpg" alt="浴袍" loading="lazy" />
+            <figcaption>酒店默认氛围</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/nsfw-sheer-silhouette.jpg" alt="纱帘" loading="lazy" />
+            <figcaption>soft 剪影策略</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/images/nsfw-stockings-shirt.jpg" alt="半褪叙事" loading="lazy" />
+            <figcaption>E1 叙事示意</figcaption>
+          </figure>
+        </div>
+
+        <div class="defaults">
+          <div class="def"><span class="k">人种</span><span class="v">东亚年轻女</span></div>
+          <div class="def"><span class="k">尺度</span><span class="v">大胆 explicit</span></div>
+          <div class="def"><span class="k">行为</span><span class="v">自展 solo</span></div>
+          <div class="def"><span class="k">暴露</span><span class="v">E1/E2</span></div>
+          <div class="def"><span class="k">体液</span><span class="v">须点名</span></div>
+          <div class="def"><span class="k">场景</span><span class="v">hotel/bed</span></div>
+          <div class="def"><span class="k">篇幅</span><span class="v">Main 100–180 · 全文 200–400 词</span></div>
+          <div class="def"><span class="k">正文</span><span class="v">七层 · 连接整句</span></div>
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="erotic-menu" id="erotic-menu">
+<p class="lead">架构：<strong>公共 L1–L4 + 专属（E暴露与衣着品类已拆）</strong>。组合包约 <strong>220+</strong>。导演台切 <strong>Erotic</strong>。配图委婉，连接句在正文。<strong>委婉氛围</strong>，露骨连接句写在 prompt 正文。</p>
+
+        <div class="menu-map">
+          <div class="menu-col menu-col-nsfw">
+            <h3>尺度 · 行为 · 暴露 · 权力</h3>
+            <ul>
+              <li><strong>尺度</strong> soft / sensual / <strong>explicit★默认</strong> / max</li>
+              <li><strong>行为</strong> 自展★ · 手部 · 口交 · 骑乘 · 后入 · 站立 · 镜前…（连接写死 who×部位×方位）</li>
+              <li><strong>暴露 E0–E4</strong> 完整 → <strong>E1 半褪★</strong> → <strong>E2 内衣★</strong> → 外翻 → 全裸点名</li>
+              <li><strong>体液结局</strong> 无 / 点名才写 · <strong>权力</strong> 对等 / 引导 / 被控…</li>
+            </ul>
+          </div>
+          <div class="menu-col menu-col-nsfw">
+            <h3>姿 · 焦点 · 表情 · 幻想</h3>
+            <ul>
+              <li><strong>姿势</strong> 床沿 · 跪趴 · 骑乘定格 · 靠墙 · 镜前…</li>
+              <li><strong>身体焦点</strong> 全身 · 胸 · 腰臀 · 腿 · 脸+连接…</li>
+              <li><strong>表情</strong> 欲望凝视 · 半眯 · 张嘴 · 失焦（禁未成年词）</li>
+              <li><strong>幻想 F</strong> 无 / 触手氛围 / 魔法光 / 兽耳（仍成人）…</li>
+            </ul>
+          </div>
+          <div class="menu-col menu-col-nsfw">
+            <h3>场 · 光 · 镜头</h3>
+            <ul>
+              <li><strong>场景</strong> 酒店★ · 卧室 · 浴室 · 窗夜 · 车内 · 更衣室…</li>
+              <li><strong>布光</strong> 钨丝台灯★ · 窗逆 · 霓虹渗 · 蒸汽 · 实用单灯…</li>
+              <li><strong>镜头</strong> 低机位中近景 · MCU · 过肩 · 竖幅全身…</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>组合包大类（SKILL 同步）</h3>
+        <div class="zones">
+          <div class="zone nsfw-z"><span class="badge">常</span><div><div class="name">常青热门</div><div class="desc">酒店 · 自展 · 骑乘…</div></div></div>
+          <div class="zone nsfw-z"><span class="badge">权</span><div><div class="name">权力 / 玩法</div><div class="desc">引导 · 束缚氛围…</div></div></div>
+          <div class="zone nsfw-z"><span class="badge">叙</span><div><div class="name">情境叙事</div><div class="desc">刚到酒店 · 雨夜…</div></div></div>
+          <div class="zone nsfw-z"><span class="badge">幻</span><div><div class="name">幻想 / 二次元向</div><div class="desc">非现实助色 F</div></div></div>
+          <div class="zone nsfw-z"><span class="badge">出</span><div><div class="name">出片 / 东亚壳</div><div class="desc">妆发壳 · 分镜 · .red</div></div></div>
+          <div class="zone nsfw-z"><span class="badge">竖</span><div><div class="name">竖屏短视频</div><div class="desc">9:16 节奏帧</div></div></div>
+        </div>
+        <p class="lead" style="margin-top:0.8rem">完整点选请上 <a href="#director">导演台 → Erotic</a>。暗示不露骨请用 <a href="#youth">Youth</a>。</p>
+        </div>
+        <div class="skill-panel" data-skill-panel="erotic-flow" id="erotic-flow">
+<div class="steps">
+          <div class="step nsfw"><div class="n">1</div><div class="t">安全</div><div class="d">18+ 东亚</div></div>
+          <div class="step nsfw"><div class="n">2</div><div class="t">路由</div><div class="d">是否 SFW</div></div>
+          <div class="step nsfw"><div class="n">3</div><div class="t">形态</div><div class="d">A / E</div></div>
+          <div class="step nsfw"><div class="n">4</div><div class="t">选题</div><div class="d">包+暴露</div></div>
+          <div class="step nsfw"><div class="n">5</div><div class="t">出片</div><div class="d">妆发壳光</div></div>
+          <div class="step nsfw"><div class="n">6</div><div class="t">正文</div><div class="d">七层连接</div></div>
+          <div class="step nsfw"><div class="n">7</div><div class="t">自检</div><div class="d">篇幅多轮</div></div>
+        </div>
+        <div class="callout nsfw">
+          <strong>连接优先：</strong>有行为必须写死 who × 部位 × 方位（connection-templates）。压缩时先砍场，永不砍连接与主光。
+        </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="erotic-scale" id="erotic-scale">
+<h3>尺度 Intensity</h3>
+        <div class="viz">
+          <svg viewBox="0 0 720 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="int" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#6ea8ff"/>
+                <stop offset="40%" stop-color="#b794f6"/>
+                <stop offset="70%" stop-color="#ff7a9a"/>
+                <stop offset="100%" stop-color="#ff4d6d"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="40" width="640" height="28" rx="14" fill="url(#int)"/>
+            <circle cx="120" cy="54" r="10" fill="#0b0d12" stroke="#fff" stroke-width="2"/>
+            <circle cx="280" cy="54" r="10" fill="#0b0d12" stroke="#fff" stroke-width="2"/>
+            <circle cx="440" cy="54" r="14" fill="#fff" stroke="#ff7a9a" stroke-width="3"/>
+            <circle cx="600" cy="54" r="10" fill="#0b0d12" stroke="#fff" stroke-width="2"/>
+            <text x="120" y="90" text-anchor="middle" fill="#9aa6bc" font-size="12" font-family="Segoe UI,sans-serif">soft</text>
+            <text x="280" y="90" text-anchor="middle" fill="#9aa6bc" font-size="12" font-family="Segoe UI,sans-serif">sensual</text>
+            <text x="440" y="90" text-anchor="middle" fill="#ff7a9a" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif">explicit★默认</text>
+            <text x="600" y="90" text-anchor="middle" fill="#9aa6bc" font-size="12" font-family="Segoe UI,sans-serif">max</text>
+          </svg>
+          <div class="viz-cap">白圈 = 默认落点（大胆 explicit）</div>
+        </div>
+
+        <h3>暴露 E0–E4</h3>
+        <div class="viz">
+          <svg viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="30" width="120" height="90" rx="12" fill="#1a2435" stroke="#6ea8ff"/>
+            <text x="80" y="70" text-anchor="middle" fill="#6ea8ff" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E0</text>
+            <text x="80" y="95" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">完整着装</text>
+            <rect x="160" y="30" width="120" height="90" rx="12" fill="#2a1a28" stroke="#ff7a9a" stroke-width="2.5"/>
+            <text x="220" y="70" text-anchor="middle" fill="#ff7a9a" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E1★</text>
+            <text x="220" y="95" text-anchor="middle" fill="#f0c8d4" font-size="11" font-family="Segoe UI,sans-serif">半褪默认</text>
+            <rect x="300" y="30" width="120" height="90" rx="12" fill="#2a1a28" stroke="#ff7a9a" stroke-width="2.5"/>
+            <text x="360" y="70" text-anchor="middle" fill="#ff7a9a" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E2★</text>
+            <text x="360" y="95" text-anchor="middle" fill="#f0c8d4" font-size="11" font-family="Segoe UI,sans-serif">内衣默认</text>
+            <rect x="440" y="30" width="120" height="90" rx="12" fill="#1a2435" stroke="#b794f6"/>
+            <text x="500" y="70" text-anchor="middle" fill="#b794f6" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E3</text>
+            <text x="500" y="95" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">外翻拨开</text>
+            <rect x="580" y="30" width="120" height="90" rx="12" fill="#1a2435" stroke="#ff4d6d"/>
+            <text x="640" y="70" text-anchor="middle" fill="#ff4d6d" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E4</text>
+            <text x="640" y="95" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">全裸点名</text>
+            <text x="360" y="145" text-anchor="middle" fill="#667087" font-size="11" font-family="Segoe UI,sans-serif">★ 未说衣服时优先 E1 或 E2 · 说全裸才 E4</text>
+          </svg>
+        </div>
+
+        <details class="more">
+          <summary>展开：为什么默认不是 E4？</summary>
+          <div class="inner">
+            「大胆」= 信息尺度；「暴露」= 衣服叙事。未说全裸时用半褪/内衣更贴「色情私房」口语，也少误脱光。说「全裸」即升 E4。
+          </div>
+        </details>
+        </div>
+        <div class="skill-panel" data-skill-panel="nsfw-gallery" id="nsfw-gallery">
+
+            <div class="combo-gallery-embed" data-combo-gallery="erotic">
+              <p class="lead">以下为该 Skill <strong>全部命名组合包</strong>实例图（组图映射 + 可搜可筛）。点卡片可复制组合包 ID。</p>
+              <div class="cg-toolbar">
+                <input type="search" class="cg-search" placeholder="搜索组合包 ID / 名称 / 分组…" />
+                <select class="cg-group"><option value="all">全部分组</option></select>
+                <span class="cg-count"></span>
+              </div>
+              <div class="cg-grid"></div>
+            </div>
+            <details class="more" style="margin-top:1rem">
+              <summary>展开：精选大图（封面向）</summary>
+              <div class="inner">
+<p class="lead">氛围记忆用，非露骨连接示范。正式正文请导演台或 <code>/erotic-prompt</code>。</p>
+        <div class="gallery-3">
+          <figure class="figure"><img src="assets/images/er-hotel-robe.jpg" alt="" loading="lazy" /><figcaption>酒店钨丝浴袍</figcaption></figure>
+          <figure class="figure"><img src="assets/images/er-bed-edge.jpg" alt="" loading="lazy" /><figcaption>床沿半褪叙事</figcaption></figure>
+          <figure class="figure"><img src="assets/images/er-window-sheer.jpg" alt="" loading="lazy" /><figcaption>窗纱夜色</figcaption></figure>
+          <figure class="figure"><img src="assets/images/er-neon-night.jpg" alt="" loading="lazy" /><figcaption>霓虹渗窗</figcaption></figure>
+          <figure class="figure"><img src="assets/images/er-bath-steam.jpg" alt="" loading="lazy" /><figcaption>浴室蒸汽</figcaption></figure>
+          <figure class="figure"><img src="assets/images/er-slip-sofa.jpg" alt="" loading="lazy" /><figcaption>沙发丝质裙</figcaption></figure>
+          <figure class="figure"><img src="assets/images/nsfw-stockings-shirt.jpg" alt="" loading="lazy" /><figcaption>半褪叙事（旧）</figcaption></figure>
+          <figure class="figure"><img src="assets/images/nsfw-hands-sheet.jpg" alt="" loading="lazy" /><figcaption>手位静物</figcaption></figure>
+          <figure class="figure"><img src="assets/images/nsfw-bed-stilllife.jpg" alt="" loading="lazy" /><figcaption>乱床静物</figcaption></figure>
+        </div>
+              </div>
+            </details>
+
+        </div>
+        <div class="skill-panel" data-skill-panel="erotic-order" id="erotic-order">
+<div class="example">
+          <div class="example-head"><span>满血模板（仍可再润色）</span><button type="button" class="copy-btn">复制</button></div>
+          <pre>/erotic-prompt Krea2
+尺度：大胆 explicit · 行为：自展 solo
+暴露：E1 半褪或 E2 内衣（未说全裸勿 E4）
+姿：床沿坐，重心一侧，对镜头
+连接：写死部位与手的关系（有插入才写插入）
+场：日系酒店 2–4 锚 · 钨丝主光打在连接区
+表情：半眯欲望 · 18+ 东亚 early twenties
+禁止：未成年词、空喊 sexy、无连接的堆砌</pre>
+        </div>
+        <div class="grid-2" style="margin-top:0.8rem">
+          <div class="def"><span class="k">懒口令（弱）</span><span class="v">「最色」无姿无连接 → 易糊</span></div>
+          <div class="def"><span class="k">满血口令（强）</span><span class="v">尺度+行为+E级+连接+光</span></div>
+        </div>
+        </div>
+      </section>
+
+      <section id="combo-gallery" class="combo-gallery-page">
+        <h2>全量组合实例图库</h2>
+        <p class="lead">三个 Skill 的<strong>每一个命名组合包</strong>都有实例图（按题材组映射）。导演台选包时也会显示缩略图。</p>
+        <div class="cg-skill-switch" role="group">
+          <button type="button" class="cg-skill-btn active" data-cg-skill="figure">Figure</button>
+          <button type="button" class="cg-skill-btn" data-cg-skill="youth">Youth</button>
+          <button type="button" class="cg-skill-btn" data-cg-skill="erotic">Erotic</button>
+          <button type="button" class="cg-skill-btn" data-cg-skill="all">全部</button>
+        </div>
+        <div class="combo-gallery-embed" data-combo-gallery="figure" data-cg-main="1">
+          <div class="cg-toolbar">
+            <input type="search" class="cg-search" placeholder="搜索组合包 ID / 名称 / 分组…" />
+            <select class="cg-group"><option value="all">全部分组</option></select>
+            <span class="cg-count"></span>
+          </div>
+          <div class="cg-grid"></div>
+        </div>
+      </section>
+
+      <section id="output">
+        <h2>输出形态 A–E</h2>
+        <div class="viz">
+          <svg viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="20" width="120" height="60" rx="12" fill="rgba(110,168,255,0.2)" stroke="#6ea8ff" stroke-width="2"/>
+            <text x="75" y="45" text-anchor="middle" fill="#6ea8ff" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">A</text>
+            <text x="75" y="65" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">全文默认</text>
+            <rect x="155" y="20" width="120" height="60" rx="12" fill="#181e2a" stroke="#3dd68c"/>
+            <text x="215" y="45" text-anchor="middle" fill="#3dd68c" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">B</text>
+            <text x="215" y="65" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">短密·Seedream</text>
+            <rect x="295" y="20" width="120" height="60" rx="12" fill="#181e2a" stroke="#ffc857"/>
+            <text x="355" y="45" text-anchor="middle" fill="#ffc857" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">C</text>
+            <text x="355" y="65" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">对照补丁</text>
+            <rect x="435" y="20" width="120" height="60" rx="12" fill="#181e2a" stroke="#b794f6"/>
+            <text x="495" y="45" text-anchor="middle" fill="#b794f6" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">D</text>
+            <text x="495" y="65" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">negative</text>
+            <rect x="575" y="20" width="120" height="60" rx="12" fill="#181e2a" stroke="#ff7a9a"/>
+            <text x="635" y="45" text-anchor="middle" fill="#ff7a9a" font-size="16" font-weight="700" font-family="Segoe UI,sans-serif">E</text>
+            <text x="635" y="65" text-anchor="middle" fill="#9aa6bc" font-size="11" font-family="Segoe UI,sans-serif">分镜系列</text>
+          </svg>
+        </div>
+        <div class="callout info"><strong>多轮：</strong>「是这样吗」→ C 补丁 ·「按这个改全文」→ A ·「一套 N 张」→ E + 连续锁脸 · 点名 Seedream 时 A 可 + 鼓励附 B</div>
+      </section>
+
+      <section id="phrases">
+        <h2>说法模板</h2>
+        <div class="grid-3">
+          <div class="example">
+            <div class="example-head"><span>Figure</span><button type="button" class="copy-btn">复制</button></div>
+            <pre>/figure-photo-prompt 韩系松弛街拍 early twenties 奶茶
+
+/figure-photo-prompt 组合:小红书封面 通勤地铁
+
+/figure-photo-prompt 居家柔美窗边 L0 针织
+
+/figure-photo-prompt 反推这条 Civitai 元数据（SFW）</pre>
+          </div>
+          <div class="example">
+            <div class="example-head"><span>Youth</span><button type="button" class="copy-btn">复制</button></div>
+            <pre>/youth-seduction-prompt 窗边 日落逆光 过肩回眸 I3蕾丝
+
+/youth-seduction-prompt 组合:窗纱 半眯被观看
+
+/youth-seduction-prompt 白月光窗边 I0 清冷
+
+/youth-seduction-prompt 是这样吗（附图）光太平了</pre>
+          </div>
+          <div class="example">
+            <div class="example-head"><span>Erotic</span><button type="button" class="copy-btn">复制</button></div>
+            <pre>/erotic-prompt 大胆 日系酒店 半褪 自展
+
+/erotic-prompt 组合:骑乘中出 女主锐
+
+/erotic-prompt soft 一点 不要插入
+
+/erotic-prompt 反推这条 civitai.red 元数据</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ 极简</h2>
+        <div class="zones">
+          <div class="zone"><span class="badge">?</span><div><div class="name">总是东亚脸？</div><div class="desc">未指定人种就默认；要白人请直说</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">人体摄影≠私房</div><div class="desc">私房必须点名</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">大胆≠全裸插入</div><div class="desc">E1/E2+自展；全裸/插入要点名</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">纯欲不心动？</div><div class="desc">写清场+光+姿+I，别只说纯欲</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">Youth vs Erotic</div><div class="desc">暗示到 I3 止；再露骨转 erotic</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">同一张脸</div><div class="desc">说连续锁 + 发色脸型</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">出图不对</div><div class="desc">回传图说「是这样吗」</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">NSFW 图为何委婉</div><div class="desc">过审；正文才写露骨</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">要写多长？</div><div class="desc">Main 100–180 · Figure/Youth 全文 200–380 · Erotic 200–400 · 缺层补一句</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">导演台不够细？</div><div class="desc">复制 /skill 命令到对话，由 skill 润色</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">Civitai 链接？</div><div class="desc">.com SFW 反推 · .red 清洗后写；禁 score 跨生态</div></div></div>
+          <div class="zone"><span class="badge">?</span><div><div class="name">全身变成半身？</div><div class="desc">词预算变焦：场先 / 脚进画</div></div></div>
+        </div>
+        <details class="more">
+          <summary>展开：本地路径</summary>
+          <div class="inner">
+            <pre style="margin:0;font-family:var(--mono);font-size:0.8rem;color:#c8d6ff;white-space:pre-wrap">教学站:  krea2_guide_site\  (仓库根)
+技能:    skills\figure-photo-prompt · youth-seduction-prompt · erotic-prompt\
+
+同步组合包:
+  python scripts/build_director_catalog.py</pre>
+          </div>
+        </details>
+      </section>
+
+      <footer class="site-footer">
+        导演台 · figure / youth / erotic · 全量组合图库 · 强刷 Ctrl+F5 · python -m http.server 8765
+      </footer>
+    </main>
+  </div>
+  <script src="assets/director-catalog.js"></script>
+  <script src="assets/combo-gallery-data.js"></script>
+  <script src="assets/dim-recommend.js"></script>
+  <script src="assets/prose-templates.js"></script>
+  <script src="assets/lightbox.js"></script>
+  <script src="assets/director.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
